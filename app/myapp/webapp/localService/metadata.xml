@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="okta" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <FunctionImport Name="resetPassword" Function="okta.resetPassword"/>
+                <FunctionImport Name="enrollMFA" Function="okta.enrollMFA"/>
+                <FunctionImport Name="login" Function="okta.login"/>
+            </EntityContainer>
+            <ComplexType Name="return_okta_login">
+                <Property Name="sessionID" Type="Edm.String"/>
+            </ComplexType>
+            <Function Name="resetPassword" IsBound="false" IsComposable="false">
+                <ReturnType Type="Edm.String"/>
+            </Function>
+            <Function Name="enrollMFA" IsBound="false" IsComposable="false">
+                <ReturnType Type="Edm.String"/>
+            </Function>
+            <Function Name="login" IsBound="false" IsComposable="false">
+                <Parameter Name="username" Type="Edm.String"/>
+                <Parameter Name="password" Type="Edm.String"/>
+                <ReturnType Type="okta.return_okta_login"/>
+            </Function>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

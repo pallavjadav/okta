@@ -1,0 +1,6 @@
+### Change password
+GET http://localhost:4004/odata/v4/okta/resetPassword()
+
+### Change MFA
+GET http://localhost:4004/odata/v4/okta/changeMFA()
+

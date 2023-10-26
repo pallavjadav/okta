@@ -1,0 +1,9 @@
+<mvc:View xmlns:form="sap.ui.layout.form" controllerName="oktalogin.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="User Logged ">
+        <content>
+                <Title text="Logged In Successfully"></Title>
+        </content>
+    </Page>
+</mvc:View>

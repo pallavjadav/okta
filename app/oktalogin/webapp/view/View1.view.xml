@@ -1,0 +1,21 @@
+<mvc:View xmlns:form="sap.ui.layout.form" controllerName="oktalogin.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+
+            <form:SimpleForm id="login" visible="false">
+                <Label text="Username"></Label>
+                <Input id="usernane" value="{userModel>/username}"></Input>
+                <Label text="Password"></Label>
+                <Input id="password" value="{userModel>/password}"></Input>
+                <Label text=""></Label>
+                <Button press="onsubmit" text ="Login"/>
+                <Button press="nextpage" text="nextpage"/>
+            </form:SimpleForm>
+
+            <Text id="logged" text="Log on Successful" visible="false"/>
+            <Button press="logout" text="Logout" visible="false" id="logout"/>
+        </content>
+    </Page>
+</mvc:View>
